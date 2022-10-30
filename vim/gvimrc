@@ -1,2 +1,2 @@
 " use SF Mono font in macvim
-set guifont=SFMono-Regular:h15
+set guifont=SFMonoPowerline-Regular:h15

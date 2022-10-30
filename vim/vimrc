@@ -16,7 +16,7 @@ set noshowmode            " disable in favor of lightline.vim's statusline
 set nofoldenable          " don't fold text by default when opening files
 set autowriteall          " write current buffer when moving buffers
 syntax enable             " enable syntax highlighting
-let mapleader = " "
+let mapleader = "\<Space>"
 " ---------------------------------------------
 
 if (has("termguicolors"))
@@ -254,10 +254,11 @@ let g:dispatch_no_maps = 1
 let g:no_csv_maps = 1
 
 " UltiSnips Snippet keys
-let g:UltiSnipsExpandTrigger = "<Tab>"
-let g:UltiSnipsJumpForwardTrigger = "jk"
-let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
+let g:UltiSnipsExpandTrigger = "<Tab>"          " use Tab to expand snippets
+let g:UltiSnipsJumpForwardTrigger = "jk"        " use Tab to move forward through tabstops
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"  " use Shift-Tab to move backward through tabstops
+" this line is not right, I dont have nvim configured
+" let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
 nnoremap <leader>U :call UltiSnips#RefreshSnippets()<CR>
 
@@ -299,3 +300,11 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " ---------------------------------------------
 " END PLUGIN CONFIGURATION
+
+" Keep swp files in the homedirectory
+set directory-=.
+set directory+=~/.vimswap
+
+" make vim use other directory for backups
+set  backupdir-=.
+set backupdir+=~/.vimswap
